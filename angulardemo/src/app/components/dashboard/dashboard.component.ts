@@ -11,5 +11,10 @@ import { FooterComponent } from "../footer/footer.component";
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+public dataToChild : string = "InputBinding"
+public dataToParent : string =""
 
+getData(str : string){
+  this.dataToParent = str
+}
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, output } from '@angular/core';
+import { EventInfoWrapper } from '@angular/core/primitives/event-dispatch';
 
 @Component({
   selector: 'app-header',
@@ -9,4 +10,16 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  @Output()
+  public value =new EventEmitter<string>();
+
+  constructor(){
+  }
+  ngOnInit(){
+    
+  }
+  passData(){
+    console.log("button clicked")
+    this.value.emit("event binding")
+  }
 }
