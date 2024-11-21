@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, viewChild } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { ContainerComponent } from "../container/container.component";
 import { FooterComponent } from "../footer/footer.component";
@@ -16,5 +16,12 @@ public dataToParent : string =""
 
 getData(str : string){
   this.dataToParent = str
+}
+@ViewChild(ContainerComponent,{ static : true })
+containerComp! : ContainerComponent;
+
+onClick(){
+  console.log(this.containerComp.msg)
+  
 }
 }
